@@ -15,7 +15,7 @@ export const Walkthrough = () => {
         muted
         loop
       ></video>
-      <p>Use your mobile number to login to print the required documents</p>
+      <p>Use your mobile number to login </p>
       <img src="src/assets/arrow.png" alt="Next" onClick={onNext} />
     </div>
   );

@@ -1,18 +1,17 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-
+import { getFirestore } from "firebase/firestore";
 const firebaseConfig = {
-  apiKey: "AIzaSyA6YxTGJ79coPubRNEw-B7SxwiuW57aDM4",
-  authDomain: "printervending.firebaseapp.com",
-  projectId: "printervending",
-  storageBucket: "printervending.firebasestorage.app",
-  messagingSenderId: "854268331348",
-  appId: "1:854268331348:web:86417a8944f062ebc874c1",
-  measurementId: "G-N702QNSCER",
+  apiKey: "AIzaSyD3Fg1AbsSRz0pR9zewUjMykyIZpIKzFzM",
+  authDomain: "printerproject-4b378.firebaseapp.com",
+  projectId: "printerproject-4b378",
+  storageBucket: "printerproject-4b378.firebasestorage.app",
+  messagingSenderId: "606396960602",
+  appId: "1:606396960602:web:3d32cd1fa6bb39f6c86d63",
 };
 
 const app = initializeApp(firebaseConfig);
 
-export const auth = getAuth(app);
-
+export const auth = getAuth();
+export const db = getFirestore(app);
 export default auth;
