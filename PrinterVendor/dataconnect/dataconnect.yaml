@@ -1,0 +1,12 @@
+specVersion: "v1"
+serviceId: "printervendor"
+location: "us-central1"
+schema:
+  source: "./schema"
+  datasource:
+    postgresql:
+      database: "fdcdb"
+      cloudSql:
+        instanceId: "printervendor-fdc"
+      # schemaValidation: "COMPATIBLE"
+connectorDirs: ["./connector"]

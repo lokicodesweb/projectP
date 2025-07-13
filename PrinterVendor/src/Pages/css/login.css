@@ -1,0 +1,137 @@
+.signup-container {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 8px;
+  color: black;
+
+  padding: 40px 32px 48px 32px;
+  margin: 100px auto 0 auto;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  max-width: 400px;
+  width: 100%;
+  min-height: 420px;
+  overflow: hidden;
+}
+
+.word {
+  font-size: 2.1rem;
+  margin-top: 0;
+  color: #1a2233;
+  letter-spacing: 0cap;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(31, 38, 135, 0.07);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.input-container {
+  margin-top: 32px;
+  width: 100%;
+  max-width: 260px;
+}
+
+.email-input {
+  width: 100%;
+  padding: 13px 10px;
+  font-size: 15px;
+  border: 1px solid rgb(9, 22, 214);
+  border-radius: 10px;
+  color: rgba(210, 210, 210, 1);
+  transition: all 0.2s;
+  background: #fafaff;
+}
+
+.email-input::placeholder {
+  color: rgba(210, 210, 210, 1);
+}
+
+.email-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgb(9, 22, 214);
+}
+
+.email-input.has-value {
+  color: black;
+}
+
+.email-input.error {
+  border-color: #ef4444;
+  color: #7f1d1d;
+}
+
+.email-input.error::placeholder {
+  color: #fca5a5;
+}
+
+.error-message {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #dc2626;
+}
+
+.button-container {
+  margin-top: 28px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.continue-button {
+  background: rgb(9, 22, 214);
+  color: rgb(255, 255, 255);
+  display: flex;
+  gap: 10px;
+  white-space: nowrap;
+  padding: 10px 32px;
+  border-radius: 7px;
+  font-size: 1.2 rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  align-items: center;
+  min-width: 120px;
+}
+
+.continue-button:hover {
+  background: rgba(205, 177, 217, 1);
+}
+
+.continue-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(147, 51, 234, 0.5);
+}
+
+.continue-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (min-width: 700px) {
+  .signup-container {
+    max-width: 500px;
+    padding: 48px 48px 56px 48px;
+    min-height: 480px;
+  }
+  .main-content {
+    min-width: 500px;
+    font-size: 10px;
+  }
+
+  .input-container {
+    max-width: 320px;
+  }
+  .continue-button {
+    font-size: 1.08rem;
+    min-width: 140px;
+    padding: 12px 40px;
+  }
+}

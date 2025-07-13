@@ -1,0 +1,29 @@
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.loading video {
+  height: 300px;
+  width: 200px;
+  position: relative;
+  top: 150px;
+}
+
+.loading p {
+  font-size: 20px;
+  color: #333;
+  margin-top: 20px;
+  text-align: center;
+  position: relative;
+  top: 180px;
+}
+.loading h1 {
+  font-size: 50px;
+  color: #333;
+  margin-top: 20px;
+  text-align: center;
+  justify-items: center;
+  position: relative;
+  top: 160px;
+}
