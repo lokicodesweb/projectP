@@ -26,7 +26,7 @@ const App = () => {
       {Loading ? (
         <Loader />
       ) : (
-        <div>
+        <>
           <Routes>
             <Route path="/" element={<Walkthrough />} />
             <Route path="/home" element={<Home />} />
@@ -35,7 +35,7 @@ const App = () => {
             <Route path="/pay" element={<Pay />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </div>
+        </>
       )}
     </>
   );

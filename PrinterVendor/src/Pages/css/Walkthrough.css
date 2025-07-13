@@ -1,54 +1,64 @@
-.walkthrough {
+.container-bg {
   min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #195dc4 0%, #4f8cff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  background: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  padding-top: 48px;
+
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.12);
+  max-width: 596px;
+  width: 100%;
+  min-height: 584px;
+  overflow: hidden;
 }
 
-.title {
-  font-size: 2.7rem;
+.container h1 {
+  font-size: 2.2rem;
   font-weight: bold;
-
-  margin-top: 0;
-  color: #000000;
+  margin: 0 0 24px 0;
+  color: #195dc4;
   letter-spacing: 2.5px;
   text-align: center;
   text-shadow: 0 2px 8px rgba(31, 38, 135, 0.07);
 }
 
 .cards-container {
+  background: #fff;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%;
+  flex-direction: column;
+  align-items: center;
 
-  min-height: 480px;
+  border-radius: 18px;
+
+  max-width: 400px;
+  width: 100%;
+  min-height: 420px;
+  overflow: hidden;
 }
 
 .cards {
-  background: #fff;
-  border-radius: 28px;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-  padding: 2.5rem 3rem 2.5rem 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 420px;
   width: 100%;
-  min-height: 430px;
+  min-height: 350px;
   transition: box-shadow 0.3s;
   position: relative;
-}
-
-.cards:hover {
-  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.22);
+  box-sizing: border-box;
 }
 
 .cards h2 {
-  font-size: 1.7rem;
-  margin-bottom: 1.2rem;
+  font-size: 1.3rem;
+  margin-bottom: 1.1rem;
   color: #1a2233;
   font-weight: 700;
   letter-spacing: 1px;
@@ -56,9 +66,9 @@
 }
 
 .cards p {
-  font-size: 0.9rem;
+  font-size: 0.98rem;
   color: #2d3a4b;
-  margin: 1.2rem 0 0.7rem 0;
+  margin: 1.1rem 0 0.7rem 0;
   text-align: center;
   font-weight: 500;
   line-height: 1.6;
@@ -67,8 +77,10 @@
 }
 
 .gif {
-  width: 320px;
-  height: 180px;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  aspect-ratio: 16/9;
   object-fit: contain;
   border-radius: 16px;
   margin-bottom: 1.3rem;
@@ -89,7 +101,7 @@
 }
 
 .start {
-  margin-top: 02 rem;
+  margin-top: 2rem;
   text-align: center;
 }
 
@@ -108,4 +120,38 @@
 .start button:hover {
   background: linear-gradient(90deg, #235390 0%, #4f8cff 100%);
   transform: translateY(-2px) scale(1.04);
+}
+
+@media (max-width: 600px) {
+  .walkthrough {
+    padding: 0;
+  }
+  .cards-container {
+    max-width: 98vw;
+  }
+  .cards {
+    padding: 1.2rem 0.5rem;
+    min-height: 220px;
+    max-width: 98vw;
+  }
+  .gif {
+    max-width: 98vw;
+    min-width: 180px;
+  }
+  .walkthrough h1 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+  }
+  .cards h2 {
+    font-size: 1.05rem;
+    margin-bottom: 0.7rem;
+  }
+  .cards p {
+    font-size: 0.85rem;
+    margin: 0.7rem 0 0.5rem 0;
+  }
+  .start {
+    margin-top: 2rem;
+    text-align: center;
+  }
 }

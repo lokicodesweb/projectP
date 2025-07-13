@@ -71,14 +71,16 @@ export const Walkthrough = () => {
   else if (step === 3) currentCard = <Card4 />;
 
   return (
-    <div className="walkthrough">
-      <h1 className="title">Printer Vending Machine</h1>
-      <div className="cards-container">{currentCard}</div>
-      {step === 3 && (
-        <Link className="start" to="/login">
-          <button>Get Started</button>
-        </Link>
-      )}
+    <div className="container-bg">
+      <div className="container">
+        <h1>Printer Vending Machine</h1>
+        <div className="cards-container">{currentCard}</div>
+        {step === 3 && (
+          <Link className="start" to="/login">
+            <button>Get Started</button>
+          </Link>
+        )}
+      </div>
     </div>
   );
 };

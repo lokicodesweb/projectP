@@ -1,0 +1,78 @@
+.input-container h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #195dc4;
+
+  margin-bottom: 1.5rem;
+  text-align: center;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px rgba(31, 38, 135, 0.07);
+}
+
+.input-container input[type="text"],
+.input-container input[type="email"],
+.input-container input[type="password"],
+.input-container input[type="Username"],
+.input-container input[type="current-password"] {
+  width: 100%;
+  padding: 13px 10px;
+  font-size: 1rem;
+  border: 1px solid #195dc4;
+  border-radius: 10px;
+  color: #222;
+  background: #fafaff;
+  margin-bottom: 18px;
+  transition: box-shadow 0.2s, border 0.2s;
+}
+
+.input-container input:focus {
+  outline: none;
+  border: 1.5px solid #4f8cff;
+  box-shadow: 0 0 0 2px #4f8cff33;
+}
+
+.button-container {
+  margin-top: 18px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.continue-button {
+  background: #195dc4;
+  color: #fff;
+  padding: 12px 40px;
+  border-radius: 7px;
+  font-size: 1.08rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  min-width: 140px;
+}
+
+.continue-button:hover {
+  background: #4f8cff;
+  transform: translateY(-2px) scale(1.04);
+}
+
+.continue-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #4f8cff80;
+}
+
+@media (max-width: 600px) {
+  .input-container h1 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  .input-container input {
+    font-size: 0.95rem;
+    padding: 10px 8px;
+  }
+  .continue-button {
+    font-size: 1rem;
+    padding: 10px 24px;
+    min-width: 100px;
+  }
+}
