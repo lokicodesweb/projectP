@@ -5,8 +5,12 @@ body,
   padding: 0;
   box-sizing: border-box;
   font-family: "Segoe UI", "Roboto", "Arial", sans-serif;
-  background: linear-gradient(135deg, #195dc4 0%, #4f8cff 100%);
+
   color: #222;
   height: 100%;
   width: 100%;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

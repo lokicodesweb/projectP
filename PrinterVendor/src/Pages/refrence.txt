@@ -1,0 +1,105 @@
+const [uploadedFiles, setUploadedFiles] = useState([]);
+
+const uploadFile = (fileObj) => {
+  const formData = new FormData();
+  formData.append("file", fileObj.file);
+
+  axios
+    .post("http://http://localhost:5173/home", formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+      onUploadProgress: (progressEvent) => {
+        const percentComplete = Math.round(
+          (progressEvent.loaded * 100) / progressEvent.total
+        );
+
+        setUploadedFiles((prev) =>
+          prev.map((f) =>
+            f.id === fileObj.id
+              ? {
+                  ...f,
+                  uploadInfo: `${percentComplete}% uploaded`,
+                }
+              : f
+          )
+        );
+      },
+    })
+    .then((response) => {
+      // Example: your backend returns { path: "/uploads/myfile.pdf" }
+      const filePath = response.data.path;
+
+      setUploadedFiles((prev) =>
+        prev.map((f) =>
+          f.id === fileObj.id
+            ? {
+                ...f,
+                status: "success",
+                uploadInfo: `${Math.floor(
+                  fileObj.file.size / 1024 / 1024
+                )}MB uploaded`,
+                path: filePath, // ✅ store the server path!
+              }
+            : f
+        )
+      );
+    })
+    .catch((error) => {
+      setUploadedFiles((prev) =>
+        prev.map((f) =>
+          f.id === fileObj.id
+            ? {
+                ...f,
+                status: "failed",
+                uploadInfo: "Upload failed",
+              }
+            : f
+        )
+      );
+    });
+};
+
+const handleFilesSelected = (files) => {
+  const newFiles = files.map((file, index) => ({
+    id: `new-${Date.now()}-${index}`,
+    name: file.name,
+    status: "uploading",
+    uploadInfo: `0% uploading...`,
+    file: file, // store the real file so uploadFile can use it
+    path: null, // will be set after upload
+  }));
+
+  setUploadedFiles((prev) => [...prev, ...newFiles]);
+
+  newFiles.forEach((fileObj) => {
+    uploadFile(fileObj);
+  });
+};
+
+const handleContinue = () => {
+  const hasFailedFiles = uploadedFiles.some((file) => file.status === "failed");
+  const hasUploadingFiles = uploadedFiles.some(
+    (file) => file.status === "uploading"
+  );
+
+  if (hasFailedFiles) {
+    alert("Please resolve failed uploads before continuing.");
+    return;
+  }
+
+  if (hasUploadingFiles) {
+    alert("Please wait for all uploads to complete.");
+    return;
+  }
+
+  alert("All files uploaded successfully! Proceeding to next step...");
+};
+
+const canContinue =
+  uploadedFiles.length > 0 &&
+  uploadedFiles.every((file) => file.status === "success") &&
+  !uploadedFiles.some((file) => file.status === "uploading");
+
+---------------------------------------------------------------------------------------------
+

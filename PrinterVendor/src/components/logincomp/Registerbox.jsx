@@ -5,6 +5,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
+import { updateProfile } from "firebase/auth";
 import Loginbox from "./loginbox";
 import { ToastContainer, toast } from "react-toastify";
 
@@ -22,13 +23,16 @@ function Registerbox() {
       await createUserWithEmailAndPassword(auth, email, password);
       const user = auth.currentUser;
       console.log("User created:", user);
+
       if (user) {
         await setDoc(doc(db, "Users", user.uid), {
           email: email,
           uname: uname,
           password: password,
         });
+        await updateProfile(user, { displayName: uname });
         console.log("User data saved to Firestore");
+
         toLog(false);
         toast.success("Registration successful!", {
           position: "top-center",
@@ -75,7 +79,7 @@ function Registerbox() {
                 required
               />
               <input
-                type="current-password"
+                type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
