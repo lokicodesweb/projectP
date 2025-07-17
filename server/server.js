@@ -30,7 +30,7 @@ app.post("/upload", upload.array("files"), (req, res) => {
     if (stderr) {
       console.error(`Python script stderr: ${stderr}`);
     }
-    console.log(`Python converting ${stdout}`);
+    console.log(`Python converted    ${stdout}`);
     res.send("Files uploaded and converted!");
   });
 });
