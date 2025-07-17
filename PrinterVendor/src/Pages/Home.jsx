@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Outerbox from "../components/Homecomp/Outerbox";
 import Uploadbox from "../components/Homecomp/Uploadbox";
 import Filestatusbox from "../components/Homecomp/Filestatusbox";
-import "./css/Home.css";
+import "./css/Homepage.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useLocation } from "react-router-dom";

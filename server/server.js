@@ -2,7 +2,6 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const multer = require("multer");
-const port = process.env.PORT || 4000;
 
 const { exec } = require("child_process");
 
@@ -40,6 +39,6 @@ app.get("/preview", (req, res) => {
   const isReady = true;
   res.send(isReady);
 });
-app.listen(port, "0.0.0.0", () => {
+app.listen(5000, "0.0.0.0", () => {
   console.log("Server is running on port 5000");
 });

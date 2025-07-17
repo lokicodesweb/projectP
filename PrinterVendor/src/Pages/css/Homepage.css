@@ -19,3 +19,6 @@ h1 {
   outline: none;
   box-shadow: 0 0 0 2px #4f8cff80;
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
