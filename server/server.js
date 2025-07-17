@@ -21,18 +21,6 @@ const upload = multer({ storage });
 
 app.post("/upload", upload.array("files"), (req, res) => {
   console.log("File received:", req.files);
-
-  exec("python ./docpdfconv.py", (error, stdout, stderr) => {
-    if (error) {
-      console.error(`Python script error: ${error.message}`);
-      return res.status(500).json({ error: "Conversion failed." });
-    }
-    if (stderr) {
-      console.error(`Python script stderr: ${stderr}`);
-    }
-    console.log(`Python converted    ${stdout}`);
-    res.send("Files uploaded and converted!");
-  });
 });
 
 app.get("/preview", (req, res) => {
