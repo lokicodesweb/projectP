@@ -15,7 +15,7 @@ export const UploadButton = ({ setFileforbox, Continue }) => {
     });
 
     axios
-      .post(`${import.meta.env.VITE_API_URL}/upload`, formdata)
+      .post("http://localhost:5000/upload", formdata)
       .then((res) => {
         if (res) {
           navigate("/preview");
