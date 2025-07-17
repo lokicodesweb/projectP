@@ -1,5 +1,5 @@
 import Registerbox from "../components/logincomp/Registerbox";
-import "./css/Login.css";
+
 function Login() {
   return (
     <div className="login-bg">
