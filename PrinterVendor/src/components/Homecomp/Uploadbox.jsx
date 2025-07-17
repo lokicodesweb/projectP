@@ -15,7 +15,7 @@ export const UploadButton = ({ setFileforbox, Continue }) => {
     });
 
     axios
-      .post("http://localhost:5000/upload", formdata)
+      .post("https://projectp-ibon.onrender.com/upload", formdata)
       .then((res) => {
         if (res) {
           navigate("/preview");
